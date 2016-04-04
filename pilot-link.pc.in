@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: Pilot Link
+Description: Suite of tools to communicate with a Palm handheld over various interfaces
+Version: @VERSION@
+Requires: 
+Libs: -L${libdir} -lpisock
+Cflags: -g -I${includedir}

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!-- $Id: pilot-link.docbook,v 1.8 2007-11-12 16:25:08 desrod Exp $ -->
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V4.1//EN"
+ "http://www.oasis-open.org/docbook/xml/4.1/docbookx.dtd" [
+<!ENTITY ietf2 SYSTEM "ietf2datebook.xml">
+<!ENTITY pilotaddresses SYSTEM "pilot-addresses.xml">
+<!ENTITY pilotclip SYSTEM "pilot-clip.xml">
+<!ENTITY pilotcsd SYSTEM "pilot-csd.xml">
+<!ENTITY pilotdebugsh SYSTEM "pilot-debugsh.xml">
+<!ENTITY pilotdedupe SYSTEM "pilot-dedupe.xml">
+<!ENTITY pilotdlpsh SYSTEM "pilot-dlpsh.xml">
+<!ENTITY pilotfile SYSTEM "pilot-file.xml">
+<!ENTITY pilotfoto SYSTEM "pilot-foto.xml">
+<!ENTITY pilotgetram SYSTEM "pilot-getram.xml">
+<!ENTITY pilotgetrom SYSTEM "pilot-getrom.xml">
+<!ENTITY pilotgetromtoken SYSTEM "pilot-getromtoken.xml">
+<!ENTITY pilothinotes SYSTEM "pilot-hinotes.xml">
+<!ENTITY pilotinstalldatebook SYSTEM "pilot-install-datebook.xml">
+<!ENTITY pilotinstallexpenses SYSTEM "pilot-install-expenses.xml">
+<!ENTITY pilotinstallhinote SYSTEM "pilot-install-hinote.xml">
+<!ENTITY pilotinstallmemo SYSTEM "pilot-install-memo.xml">
+<!ENTITY pilotinstallnetsync SYSTEM "pilot-install-netsync.xml">
+<!ENTITY pilotinstalltodo SYSTEM "pilot-install-todo.xml">
+<!ENTITY pilotinstalltodos SYSTEM "pilot-install-todos.xml">
+<!ENTITY pilotinstalluser SYSTEM "pilot-install-user.xml">
+<!ENTITY pilotlink SYSTEM "pilot-link.xml">
+<!ENTITY pilotmemos SYSTEM "pilot-memos.xml">
+<!ENTITY pilotnredir SYSTEM "pilot-nredir.xml">
+<!ENTITY pilotreadexpenses SYSTEM "pilot-read-expenses.xml">
+<!ENTITY pilotreadical SYSTEM "pilot-read-ical.xml">
+<!ENTITY pilotreadnotepad SYSTEM "pilot-read-notepad.xml">
+<!ENTITY pilotreadpalmpix SYSTEM "pilot-read-palmpix.xml">
+<!ENTITY pilotreadscreenshot SYSTEM "pilot-read-screenshot.xml">
+<!ENTITY pilotreadtodos SYSTEM "pilot-read-todos.xml">
+<!ENTITY pilotreadveo SYSTEM "pilot-read-veo.xml">
+<!ENTITY pilotreminders SYSTEM "pilot-reminders.xml">
+<!ENTITY pilotschlep SYSTEM "pilot-schlep.xml">
+<!ENTITY pilotfototreo600 SYSTEM "pilot-foto-treo600.xml">
+<!ENTITY pilotfototreo650 SYSTEM "pilot-foto-treo650.xml">
+<!ENTITY pilotwav SYSTEM "pilot-wav.xml">
+<!ENTITY pilotxfer SYSTEM "pilot-xfer.xml">
+ ]>
+<book label="pilot-link" status="0.12">
+<chapter label="1" id="manpages">
+<title>manpages</title>
+&ietf2;
+&pilotaddresses;
+&pilotclip;
+&pilotcsd;
+&pilotdebugsh;
+&pilotdedupe;
+&pilotdlpsh;
+&pilotfile;
+&pilotfoto;
+&pilotgetram;
+&pilotgetrom;
+&pilotgetromtoken;
+&pilothinotes;
+&pilotinstalldatebook;
+&pilotinstallexpenses;
+&pilotinstallhinote;
+&pilotinstallmemo;
+&pilotinstallnetsync;
+&pilotinstalltodo;
+&pilotinstalltodos;
+&pilotinstalluser;
+&pilotlink;
+&pilotmemos;
+&pilotnredir;
+&pilotreadexpenses;
+&pilotreadical;
+&pilotreadnotepad;
+&pilotreadpalmpix;
+&pilotreadscreenshot;
+&pilotreadtodos;
+&pilotreadveo;
+&pilotreminders;
+&pilotschlep;
+&pilotfototreo600;
+&pilotfototreo650;
+&pilotwav;
+&pilotxfer;
+</chapter>
+</book>

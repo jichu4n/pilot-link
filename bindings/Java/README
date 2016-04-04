@@ -1,0 +1,27 @@
+Stephan Bösebeck & John Mitchell
+
+We have coded this bindings for the PilotLink library, as the original version by David Goodenough did not run with jdk 1.4.
+Some remarks about the source:
+- We wanted to keep the C-part as small es possible. So porting to other platforms should be easier
+- All communication with the lib is done via org.gnu.PilotLink, which uses RawRecords. These RawRecords can be used to build other data records (lik DatebookRecord, Memo, etc). Disgn like in jdk's streams:
+   DatebookRecord dbr= new DatebookRecord(PilotLink.getRecord...)
+
+At the moment, this functions are supported:
+- Reading and writing of RawRecords by index
+- Reading of user and sysinfo
+- reading and writing of DatebookRecords
+
+I hope i can add more features soon.
+
+BUG:
+There is a problem opening more than one db at a time. The lib gives back Errorcode -1, even if the DB was being closed before.
+
+INSTALLATION:
+Normally just do a "configure --with-java" in the Pilot-Link dir. Then you will get a pilotlink.jar and a lib, which will be installed in JAVA_HOME.
+For testing an as an example, there is a test.java which can be used to demonstrate the funktionality of the bindings. Take a look at the test.java, before you try it...
+By default, the port the test.java connects ist /dev/usb/tts/1 (Devfs), you can either change it in source or start the testclass with the port as param.
+
+Stephan Bösebeck (stephan_boesebeck@web.de)
+John Mitchell (jfm@minioak.com)
+
+Thanks to Alex Villacís Lasso (a_villacis@palosanto.com)

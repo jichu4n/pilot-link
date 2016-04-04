@@ -1,0 +1,116 @@
+$Id: TODO,v 1.20 2007/02/16 18:26:41 desrod Exp $
+
+Major Issues
+------------
+	Open/Pending
+	------------
+	- read-expenses/install-expense doesn't return the string of Type
+	  for 'Train, Airplane', etc.
+
+	- Check RPC code (something broken on large-endian machines?)
+
+        - pilot-xfer -f fix (support '-f FooDB' as 'FooDB.p{db|rc|qa}
+	  - Split out "Sync" from Backup function
+
+	- "strict-ify" pilot-sync-plan.pl
+
+
+	Fixed/Closed
+	------------
+	- Fix DLP to understand multiple return arguments.
+
+
+Minor Issues
+------------
+	Open/Pending
+	------------
+	- Add current date/time to dlp_AddSyncLogEntry(); 
+
+	- install-hinote duplicate note detection, export of notes from
+	  Hi-NoteDB.pdb into desktop text files. Can we easily handle
+	  images?
+
+	- Add progress callbacks to libpisock so that you can find out how
+	  far a file transfer has gone (this is complex, as you also need to
+	  instrument PADP and perhaps SLP transmissions, receptions, and
+	  calculating exactly how many bytes is needed to transfer a file
+	  won't be fun.)
+
+	  knghtbrd: this is partly done now.
+
+        - Update Java bindings to use Ant instead of {g|n}make
+
+        - Rewrite Perl bindings to take advantage of MakeMaker
+
+	- There's a small perl problem with writing the binary character 11
+	  to the end of a record. The following example illustates this:
+
+	#!/usr/bin/perl -w
+	use diagnostics;
+	use PDA::Pilot;
+	# it's the last value which makes the program fail;
+	# and it fails only for the value 11!
+	@rec = (0,0,0,0,0,0,0,0,11);
+	%info = ("type"=>"Data","creator"=>"XXXX","name"=>"test");
+	$pdb = PDA::Pilot::File::create("test.pdb", \%info ) or die "Oops!\n";
+	$rec = join('', map(chr, @rec));
+	$pdb->addRecordRaw($rec,0,0,0);
+
+
+Tweaks/Enhancements
+-------------------
+	- Add proper curses updates to pilot-xfer -b -f -i -s -p to look
+	  something like:
+
+	.--------------------------------------------------------------.
+	| File:     /tmp/palm/Alpha-Lg.pdb                  Successful |
+	| Size:     3,462 bytes, 3.38k           1,028,492 bytes total |
+	| Progress: [==========================>                 ] 62% |
+	| Overall:  [=======================>                    ] 50% |
+	| Time:     00:11:23                                           |
+	| Files: 234 remaining, 468 total                              |
+	`--------------------------------------------------------------'
+
+	  knghtbrd: suggest wget-style output?  curses not required.
+
+	- Start to condense the install-* binaries into one binary called
+	  pilot-install. getopt() is a prerequisite for this, so we can do
+	  'pilot-install -memos -todos' for example. Too much duplicated
+	  code in there.  Symlink the rest of the apps to pilot-install, and
+	  just test argv[0] to run the proper functions. Multi-call binary.
+
+	- 'pilot-xfer -f Foo' to pull 'Foo.prc' from your Palm works. 
+	  Additional option to pull by CrID would be nice as well (and
+	  faster, since we can use the DLP equivalent of
+	  DmOpenDatabaseByTypeCreator())
+
+	- Add Tcl 8 specific code to allow retrieval of raw records, and
+	  optionally use Tcl routines for packing and unpacking; Add all dlp
+	  functions, clean up the channel code rats nest. Somehow. (Separate
+	  source file?)
+
+	- Perl bindings: Change record representation from string to object
+	  to match Python implementation. Add packers. Document.
+
+	- Collapse: read-todos/install-todos, memos/install-memos, etc.
+
+
+New Features
+------------
+        - pxd, first cut at a pilot-xfer'ized daemon
+
+	- Standard output format for the "4 Magic Buttons". XML? csv?
+	  iCal/vCard?
+	
+	- Teach pilot-sync-plan.pl about the other repetition types that are
+	  convertable from Plan to Pilot.
+
+	- pilot-xfer --daemon. Would be a good test to get it listening on a
+	  port in a non-scripted hacky way. All applications which return
+	  should have this functionality. Interactive applications should be
+	  left alone.
+
+
+Documentation Updates
+---------------------
+	- Reference IP_FORWARD=yes in /etc/sysconfig/sysctl for the ppp HOWTO
