@@ -1,3 +1,5 @@
+This is just a quick hotfix/hack to make the project compileable on modern systems.
+------------------------------
 pilot-link -- Palm Handheld Glue - http://www.pilot-link.org
 
 The code and other related files in this distribution are licensed under the
@@ -37,7 +39,7 @@ past lists archives and posts from thousands of other users.
 
 The architecture of pilot-link
 ------------------------------
-There are several core parts of pilot-link: 
+There are several core parts of pilot-link:
 
 	the libraries
 	-------------
@@ -73,7 +75,7 @@ There are several core parts of pilot-link:
 	your favorite language of choice.  Currently, pilot-link includes
 	language "bindings" in Perl, Python, Java, and Tcl.  This means you
 	can use those languages, instead of C directly, to talk to your Palm
-	handheld device and communicate with it. 
+	handheld device and communicate with it.
 
 	Want to write a Java application that uses pilot-link's libraries?
 	Simple! Just use the Java bindings.
@@ -127,12 +129,12 @@ Building pilot-link on Linux/Unix systems
 	software.
 
 		$ make
-	
+
 	After the source builds, feel free to play around in the 'src'
 	subdirectory, CAREFULLY. 'dlpsh' and 'pilot-xfer' are probably the
 	most useful programs for you, and also the safest to use
 	non-destructively.
-	
+
 	Once you have determined that pilot-link works and suits your needs
 	by testing with these programs, switch to the super user, typically
 	"root", to install the conduits, libraries, docs, and headers
@@ -161,7 +163,7 @@ Building pilot-link on Linux/Unix systems
 	these common tools are probably packaged for you.
 
 
-Building pilot-link on OS/2 
+Building pilot-link on OS/2
 ---------------------------
 	pilot-link on OS/2 only supports serial devices. USB is unsupported
 	at this time. We would like volunteers to help us out porting
@@ -172,17 +174,17 @@ Building pilot-link on OS/2
 
 	The steps are fairly straightforward.
 
-	Run the os2configure.cmd script in the top-level directory. 
-	
+	Run the os2configure.cmd script in the top-level directory.
+
 	Run make -f Makefile.os2
-	
+
 	Play around, CAREFULLY. pilot-xfer is probably the most useful
 	program for you, and also the safest of all to use non-destructively.
 	Also dlpsh is a good app to use to poke around in your Palm device.
-	
+
 	Run 'make install' if you you have tested thoroughly and are sure
 	pilot-link works well for you.
-	
+
 	Note on pilot-debug: This program is a work-in-progress, and requires
 	Tcl 7.5 (or greater) and optionally Tk 4.1 (or greater) and/or
 	Readline 2.0.  You'll need to modify Makefile to to use Readline 2.0,
@@ -254,16 +256,16 @@ Building pilot-link on Apple OSX/Darwin
 	first. The syntax to test pilot-link on OSX for USB devices is as
 	follows:
 
-		<pilot-link-command> -p usb: [arguments..] 
+		<pilot-link-command> -p usb: [arguments..]
 
-	One example of this is as follows: 
+	One example of this is as follows:
 
 		pilot-xfer --port usb: --list
 
 	This should list the record and resource databases found on your Palm
 	handheld device.
 
-	
+
 Building pilot-link on Cygwin under Windows
 -------------------------------------------
 	FIXME: Unsupported at this time, but may run under Cygwin talking to
@@ -274,7 +276,7 @@ Some usage notes about pilot-link
 ---------------------------------
 	read-ical and sync-ical will only run if you have ical-2.x installed
 	and in the path.
-	
+
 	sync-plan is a full syncronization program, though it has some
 	interesting quirks and requirements. You must running netplan from
 	plan-1.6.1 (probably available at
@@ -285,16 +287,16 @@ Some usage notes about pilot-link
 	moment.  Sync-plan leaves a file, that has a name starting with
 	"pilothash", in the current directory. This file must be present for
 	all future syncs between that plan database and that Palm.
-	
+
 	As sync-plan is a work in progress, please contact me with any
 	problems.
-	
+
 	The default connection rate is 9600 baud. You are welcome to try
 	higher baud rates (19200, 38400, or 57600) by setting the PILOTRATE
 	environment variable, but various machines have various limitations.
 	(Be careful about 38400 on a Linux box if you've been using setserial
 	to change the multiplier.)
-	
+
 	pilot-mail (which requires a Palm with the new Mail application, as
 	well as sendmail and/or a POP3 server) is still in the experimental
 	stage.  Run with an argument of '-H' for help. While I don't expect
@@ -306,7 +308,7 @@ Some usage notes about pilot-link
 	If you wish, you may easily change the default settings (pop host,
 	password, etc.) for pilot-mail by editing the top of pilot-mail.c, as
 	well as by setting the environment variables indicated in its help.
-	
+
 	Scott Grosch's "validate" program is included, and can be made via
 	'make validate', but it may not be of use to anyone but Scott.
 
@@ -327,7 +329,7 @@ USB Notes
 
 	If you would like to try the new libusb code, please see
 	doc/README.libusb for details on how to get that working properly.
-	
+
 
 FreeBSD Notes
 -------------
@@ -352,13 +354,13 @@ Embedding information
 	As of 0.5.0, the headers in pilot-link have been rearranged slightly
 	so that it should be easier and more reliable to use the libpisock.a
 	library in external applications.
-	
+
 	If you want to use the pilot-link portability layer (configured via
 	autoconf), then include pi-source.h. Otherwise, do not touch this
 	file, as it sets up a mildly complex environment.
-	
+
 	For all normal operations, simply include the obvious files (pi-file
-	for pdb and .prc file access, pi-dlp for DLP sync functions, etc.). 
+	for pdb and .prc file access, pi-dlp for DLP sync functions, etc.).
 	pi-macros contains the portable byte-access routines.
 
 
@@ -370,8 +372,8 @@ Reporting Bugs
 	resolved. You can also attach files and patches any other relevant
 	items to each bug report, to help our team solve the issues or add
 	the features you report.
-	
-	PLEASE NOTE 
+
+	PLEASE NOTE
 	-----------
 		Please check the existing bugs in the system FIRST
 		before reporting your bug. There may be an identical
@@ -401,7 +403,7 @@ License notes
 	language bindings (Perl, Python, Java, and Tcl) are licensed for use
 	under the LGPL. For more information, please see COPYING.LIB included
 	in this source tree.
-	
+
 	All contained source is the copyright of its author(s). Please see
 	the copyright notices in the individual files for more information on
 	their individual copyrights.

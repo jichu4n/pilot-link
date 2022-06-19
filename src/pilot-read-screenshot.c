@@ -1,5 +1,5 @@
 /*
- * $Id: pilot-read-screenshot.c,v 1.16 2006/11/02 14:54:31 desrod Exp $ 
+ * $Id: pilot-read-screenshot.c,v 1.16 2006/11/02 14:54:31 desrod Exp $
  *
  * pilot-read-screenshot.c
  *
@@ -40,10 +40,10 @@
 
 #ifdef HAVE_PNG
 # include "png.h"
-# if (PNG_LIBPNG_VER < 10201)
+//# if (PNG_LIBPNG_VER < 10201)
 #  define png_voidp_NULL (png_voidp)NULL
 #  define png_error_ptr_NULL (png_error_ptr)NULL
-# endif
+//# endif
 #endif
 
 #define pi_mktag(c1,c2,c3,c4) (((c1)<<24)|((c2)<<16)|((c3)<<8)|(c4))

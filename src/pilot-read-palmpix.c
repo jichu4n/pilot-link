@@ -1,5 +1,5 @@
 /*
- * $Id: pilot-read-palmpix.c,v 1.36 2007/02/04 23:06:03 desrod Exp $ 
+ * $Id: pilot-read-palmpix.c,v 1.36 2007/02/04 23:06:03 desrod Exp $
  *
  * pilot-read-palmpix.c:  PalmPix image convertor
  *
@@ -42,10 +42,10 @@
 
 #ifdef HAVE_PNG
 #include "png.h"
-#if (PNG_LIBPNG_VER < 10201)
+//#if (PNG_LIBPNG_VER < 10201)
  #define png_voidp_NULL (png_voidp)NULL
  #define png_error_ptr_NULL (png_error_ptr)NULL
-#endif
+//#endif
 #endif
 
 const char *progname;
